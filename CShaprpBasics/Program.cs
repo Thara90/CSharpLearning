@@ -8,7 +8,7 @@ namespace CShaprpBasics
     {
         static void Main(string[] args)
         {
-            //NewMethod2();
+            NewMethod2();
         }
 
         private static void NewMethod2()
