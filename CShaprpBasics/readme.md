@@ -1,26 +1,21 @@
 
 <a name="readme-top"></a>
 
-
-
-
-
 <br />
 <div align="center">
-  <a href="https://dev.azure.com/Dermalyzer/Dermalyzer-Frontend/_git/dermalytics-mobile?path=/automation">
+  <a href="">
   </a>
 
-<h3 align="center">Dermalyser</h3>
+<h3 align="center">Brainsafe</h3>
 
   <p align="center">
-    Automation Framework User Manual 
+    Android Mobile Automation User Manual 
     <br />
-    <a href="https://dev.azure.com/Dermalyzer/Dermalyzer-Frontend/_git/dermalytics-mobile?path=/automation"><strong>Explore the docs »</strong></a>
+    <a href=""><strong>Explore the docs</strong></a>
     <br />
     <br />
   </p>
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -34,22 +29,16 @@
       </ul>
     </li>
     <li>
-      <a href="#Test_Environment">Test Environment Setup(MAC OS)</a>
+      <a href="#Test_Environment">Test Environment Setup(WINDOWS OS)</a>
       <ul>
-        <li><a href="#Install_Appium_Server">Install Appium Server</a></li>
-        <li><a href="#Install_JAVA_JDK_and_Maven">Install JAVA JDK and Maven</a></li>
-        <li><a href="#BrowserStack_Configuration">BrowserStack Configuration</a></li>
+	  <li><a href="#Install-Visual-Studio">Install Visual Studio</a></li>
+        <li><a href="#Install-Appium-Server">Install Appium Server</a></li>
+        <li><a href="#Install-JAVA-JDK">Install JAVA JDK</a></li>
         <li><a href="#Environment_Variables">Environment Variables</a></li>
       </ul>
     </li>
     <li><a href="#Project_Structure">Project Structure</a></li>
     <li><a href="#Execute_Tests">Execute Tests</a></li>
-    <li><a href="#Pipeline_Configurations">Pipeline Configurations</a></li>
-      <ul>
-        <li><a href="#Pipeline_Tasks">Pipeline Tasks</a></li>
-        <li><a href="#Pipeline_Variable_Groups">Pipeline Variable Groups</a></li>
-        <li><a href="#Execution">Execution</a></li>
-      </ul>
     <li><a href="#Reporting_Test_Results">Reporting Test Results</a></li>
     <li><a href="#Special_Notes">Special Notes</a></li>
     <li><a href="#Author">Author</a></li>
@@ -62,379 +51,232 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Dermalyser is an image analysing software application functioning as decision support to healthcare professionals on assessing suspected
-lesions for skin cancer.
-The software application uses a mobile camera to capture images of skin lesions.
+Brainsafe is a mobile application which use to increase safety in sports where head injuries occur and minimize long-term effect after getting a concussion.
+This is a platform to educate the users about concussions, offer a 6-step rehabilitation program etc. 
 
-Automation project built for the Android & iOS platforms.
-Test Scripts will be executed in real devices in BrowserStack and able to run parallel execution.
+Automation project built for the Android platform.
+Test Scripts can be executed in real devices as well as emulators.
 
 ### Built With
 
-The test automation framework comprises following tools and libraries :
+The test automation project comprises following tools and libraries :
 
-* **Cucumber** - BDD Framework
-* **Design Pattern** - Custom Page Object Pattern with Page Factory
-* **Appium** - Mobile Native app, Hybrid App (as a Driver)
-* **JAVA** - Programming language
-* **Maven** - Build Tool
-* **Intellij** - Integrated Development Environment
-* **BrowserStack** - Cloud Based Hosted mobile real devices
-* **TestNg** - TestNg Java testing framework
-
+* **Design Pattern** - Paje Object Model
+* **Appium** - Mobile Hybrid App (as a Driver)
+* **C#** - Programming language
+* **Visual Studio** - Integrated Development Environment
+* **Nunit** - unit testing framework
+* **Andriod Studio** - emulator
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 
-## Test Environment Setup (MAC OS)
+## Test Environment Setup (WINDOWS OS)
 
+### 1. Install Visual Studio
 
-### 1. Install Appium Server
-
-
-* Install Homebrew:
+* Install Visual Studio :
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+https://developer.android.com/studio
 ```
+
+### 2. Install Appium Server
+
 * Install node.js and npm :
 ```
-brew install node
+https://nodejs.org/en/
 ```
-* Install Appium by npm
+* Check node.js and npm are installed :
 ```
-npm install -g appium@1.4.13
+node --version
+npm --version
+```
+* Install Appium by npm :
+```
+npm install -g appium
+```
+* Check Appium is installed :
+```
+appium --version
+```
+* Install Appium GUI version by downloading :
+```
+https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
+```
+* Install Appium doctor :
+```
+npm install appium-doctor -g
+```
+* Check Appium doctor is installed :
+```
+appium-doctor --version
 ```
 
-* Install Appium GUI version by downloading
-```
-https://bitbucket.org/appium/appium.app/downloads/
-```
+### 2. Install JAVA JDK
 
-
-
-### 2. Install JAVA JDK and Maven
-
-Check if java jdk (v11) is already install on your mac:
+Check java jdk is already installed :
 ```
 java -version
 ```
-You should see following output if java already installed
+You should see following output if java is already installed :
 ```
-openjdk 11.0.16.1 2022-08-12
-OpenJDK Runtime Environment Homebrew (build 11.0.16.1+0)
-OpenJDK 64-Bit Server VM Homebrew (build 11.0.16.1+0, mixed mode)
+java version "19.0.1" 2022-10-18
+Java(TM) SE Runtime Environment (build 19.0.1+10-21)
+Java HotSpot(TM) 64-Bit Server VM (build 19.0.1+10-21, mixed mode, sharing)
 ```
-Download and install JAVA SDK if it is not yet installed (choose Mac OS X version)
+Download and install JAVA SDK if it is not installed (choose windows version)
 ```
-http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-```
-Install Maven
-```
-brew install maven
+https://www.oracle.com/java/technologies/downloads/
 ```
 
-#### Android & iOS Software Dependencies
-#### - Android
+#### Android Software Dependencies
+#### - Android Emulator
 * Download Android Studio : http://developer.android.com/sdk/index.html
 * Launch Android Studio - Tools - SDK Manager, update and download latest SDK tools
-* Add JAVA JDK and Android SDK environment variable to ~/.bash_profile:
+* Add JAVA JDK and Android SDK environment variables :
 ```
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk11.0.16.1.jdk/Contents/Home 
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:$JAVA_HOME:$JAVA_HOME/bin:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$ANDROID_HOME/platform-tools/adb
+JAVA_HOME=C:\Program Files\Java\jdk-19 
+ANDROID_HOME as a user variable=C:\Users\User\AppData\Local\Android\Sdk
+PATH=%JAVA_HOME%\bin:%ANDROID_HOME%\platform-tools:%ANDROID_HOME%\platform-tools\adb
 ```
-* Save `.bash_profile` and run:
+* Run appium doctor :
 ```
-source ~/.bash_profile
+appium-doctor --android
 ```
-
-#### - iOS
-1. Download `xCode7.3` stable release version: https://developer.apple.com/xcode/download/
-2. Under xcode, Add simulator `iPhone 12 Pro + OS version 14.0`
-
-If everything install successfully, you should see output like this:
+* If everything install successfully, you should see output like this :
 ```
-Running Android Checks
-✔ ANDROID_HOME is set to "/Users/***/Library/Android/sdk"
-✔ JAVA_HOME is set to "/Library/Java/JavaVirtualMachines/jdk11.0.16.1.jdk/Contents/Home."
-✔ ADB exists at /Users/***/Library/Android/sdk/platform-tools/adb
-✔ Android exists at /Users/***/Library/Android/sdk/tools/android
-✔ Emulator exists at /Users/***/Library/Android/sdk/tools/emulator
-✔ Android Checks were successful.
-
-✔ All Checks were successful
-MacBook-Pro:Project AIM$ appium-doctor --ios
-Running iOS Checks
-✔ Xcode is installed at /Applications/Xcode.app/Contents/Developer
-✔ Xcode Command Line Tools are installed.
-✔ DevToolsSecurity is enabled.
-✔ The Authorization DB is set up properly.
-✔ Node binary found at /usr/local/bin/node
-✔ iOS Checks were successful.
-
-✔ All Checks were successful
+✔ The Node.js binary was found at: C:\Program Files\nodejs\node.EXE
+✔ Node version is 18.12.1
+✔ ANDROID_HOME is set to: C:\Users\User\AppData\Local\Android\Sdk
+✔ JAVA_HOME is set to: C:\Program Files\Java\jdk-19
+   Checking adb, android, emulator, apkanalyzer.bat
+	'adb' is in C:\Users\User\AppData\Local\Android\Sdk\platform-tools\adb.exe
+	'android' is in C:\Users\User\AppData\Local\Android\Sdk\tools\android.bat
+	'emulator' is in C:\Users\User\AppData\Local\Android\Sdk\emulator\emulator.exe
+	'apkanalyzer.bat' is in C:\Users\User\AppData\Local\Android\Sdk\cmdline-tools\latest\bin\apkanalyzer.bat
+✔ adb, android, emulator, apkanalyzer.bat exist: C:\Users\User\AppData\Local\Android\Sdk
+✔ 'bin' subfolder exists under 'C:\Program Files\Java\jdk-19
 ```
-
-### 3. BrowserStack Configuration
-
-* Sign In - Login with given credentials
-* Upload App - You can upload your .apk & .ipa files
-  once upload is finish it gives an App ID
-
-Ex:
+#### - Android real device
+* Run Vysor :
 ```
-bs://b6ef9e2367ebc67b20faa80518105065db4c2d6a
+https://www.vysor.io/download/
 ```
-
-
-* Upload Images for Image Injection process
-
+* Download SDK from command line tools and extract :
 ```
-curl -u "BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESSKEY" -X POST "https://api-cloud.browserstack.com/app-automate/upload-media" -F "LOCAL_LOCATION_OF_IMAGE" -F "custom_id=SampleMedia" -k
+https://developer.android.com/studio
 ```
-Once uploaded it will generate a url as below
+* Find the API level of aligned with your device andriod version :
 ```
-"media://3a6832006db627c6ebba61b7637a0d42c44031c9","custom_id":"SampleMedia","shareable_id":"BROWSERSTACK_USERNAME/SampleMedia"
+https://en.wikipedia.org/wiki/Android_version_history :
 ```
-<!-- Environment Variables -->
-### 3. Environment Variables
-
-1. System requires below variables to be installed
-
-
-* BROWSERSTACK_USERNAME
+* Navigate to \cmdline-tools\bin folder in downloaded andriod-sdk from commandline:
 ```
-export BROWSERSTACK_USER="****"
+sdkmanager "platform-tools" "platforms;android-<<API level>>"
 ```
-
-* BROWSERSTACK_ACCESSKEY
+* Check platform-tools is installed :
 ```
-export BROWSERSTACK_KEY="****"
+<<local dirctory>>\android-sdk
 ```
-* Correct Username to login
+* Add Android SDK environment variables :
 ```
-export APPUN1="bob@test.com"
+ANDROID_HOME as a system variable=C:\Program Files\android-sdk
+PATH=%ANDROID_HOME%\platform-tools
 ```
-* Correct Password to login
-```
-export APPPWD1="Pa\$\$w0rd"
-```
-* Incorrect Username
-```
-export INAPPUN1="wrongun@email.com"
-```
-* Incorrect Password
-```
-export INAPPPWD1="Wrongpw"
-```
-* Image Uploaded Image ID's
-```
-export MELANOMA="media://b846c16452ccb4744c13cdffca715875069d7695"
-```
-* Application Uploaded App IDs
-```
-export ANDROID_APP="bs://26f9e617382eb8ff42bc7a0dbdac255501efb781"
-export IOS_APP="bs://b6ef9e2367ebc67b20faa80518105065db4c2d6a"
-```
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Project Structure -->
 ## Project Structure
 
 ```
-src
-|-- test
-    |-- java
-        |-- AIM
-            |-- Base
-                |-- BasePage.java
-                |-- BaseSteps.java
-                |-- Basetest.java            
-            |-- Features
-                |-- AboutApp
-                    |-- DermalyserAboutApp.feature
-                |-- ContactUs
-                    |-- DermalyserContactUs.feature
-                |-- FAQ
-                    |-- DermalyserFAQ.feature
-                |-- Login
-                    |-- HcpLogin.feature
-                    |-- HcpForgotPassword.feature
-                    |-- HcpLogout.feature
-                |-- SkinTest	
-                    |-- NegativePatientSkinTest.feature
-                    |-- PatientSkinTest.feature
-            |-- Pages 
-                |-- PageAppDetails
-                    |-- PageAppDetails.java
-                |-- PageCamera
-                    |-- PageCamera.java
-                |-- PageLogin
-                    |-- PageForgotPassword.java
-                    |-- PageHcpLogin.java
-                |-- PagePatientDetails
-                    |-- PagePatientDetails.java
-            |-- Steps
-                |-- StepAppDetails
-                    |-- StepAppDetails.java
-                |-- StepLogin
-                    |-- StepForgotPassword.java
-                    |-- StepHcpLogin.java
-                |-- StepSkinTest
-                    |-- StepNegativeSkinTest.java
-                    |-- StepPatientSkinTest.java
-            |-- Tests
-                |-- RunnerTest.java
-        |-- Drivers
-                |-- CommonDriver.java
-                |-- DeviceAndroidDriver.java
-                |-- DeviceiOSDriver.java            
-|-- pom.xml
-|-- android_test.xml
-|-- ios_test.xml
-|-- readme.md
+brainsafe_automation
+|-- BrainSafe_POC
+	|-- Apps
+		|-- app-test-release.apk           
+	|-- Base
+		|-- Base.cs
+		|-- ExtentReport.cs
+	|-- Hooks
+		|-- TestInitialize.cs
+	|-- Pages 
+		|-- BaseLine
+			|-- BaseLine.cs
+		|-- Home
+			|-- AppHome.cs
+		|-- Login
+			|-- AppLogin.cs
+		|-- Rehabilitation
+			|-- BuffaloTreadmillTest.cs
+			|-- CognitiveTest.cs
+			|-- RehabilitationGeneral.cs
+			|-- RetrunToPlayTest.cs
+		|-- Welcome
+			|-- Appwelcome.cs
+	|-- TestResults
+		|-- TestResults.xml  
+	|-- Tests
+		|-- TestRunner.cs  
+		|-- TestWrapper.cs     
+|-- README.md
 ```
 
+#### Apps
+Store the app .apk files.
 
-#### Features
-These files contains the acceptance criteria which are written in Gherkin Language and contains various scenarios.
-The feature files are tagged with "@tagname" to group common feature files
+#### Hooks
+Intializing and closing driver. 
 
 #### Pages
 PageObjects are used to store the Elements for a Page.
 
-#### Steps
-Every steps defined in Feature file needs to be implemented in Steps  Class.
+#### TestResults
+Store the as resuls as .xml file.
 
-#### Drivers
-Device capabilities added here. considering the multiple devices (Android / iOS)
-particular device capabilities added under drivers.
-
-#### Tests - Runner Test
-Test Suites are used to run a group of Tests which are tagged and represented in form of Feature files & Scenarios.
-Adding tags to the "tags" filed will execute the scripts which is added.
-```
-@CucumberOptions(
-    monochrome = true,
-    plugin = {"json:target/cucumber.json"},
-    tags = "@******",
-    features = "src/test/java/AIM/Features",
-    glue = "AIM.Steps",
-    publish = true
-)
-```
+#### Tests
+Test runner class where test cases are written and execution order is mentioned.
+Test wrapper classes where methods are wrapped meaningfully to perform a specifc functionality.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Run Tests -->
 ## Execute Tests
-Test Suites are used to run a group of Tests which are tagged and represented in form of Feature files & Scenarios
+#### - From Visual Studio
 
-Open the Terminal and execute this command
+1. Open the Solution Explorer view
+2. Right click on project folder 
+3. Select Build 
+4. Check if build is successful in the output panel
+5. Open the Test Explorer view
+6. Click on Run All Test In View or Run option
 
-* Before run the tests, clean the project and removes all files generated by the previous build.
-```
-mvn clean
-```
+#### - From Developer PowerShell
 
-* To Run all test (iOS & Android) 
+1. Open Developer PowerShell from View->Terminal
+2. Build project
 ```
-mvn test -DAPPPWD1="<password>" -DINAPPPWD1="<password>"
+dotnet build
 ```
+3. Run all test
 ```
-mvn clean install
+dotnet test --logger:nunit
 ```
-* To Run all the tests and generate the Cucumber HTML Reports
-```
-mvn verify -DAPPPWD1="<password>" -DINAPPPWD1="<password>"
-```
-* To Run specific device (Ex: Android)
-```
-mvn verify -Dsurefire.suiteXmlFiles=android_test.xml -DAPPPWD1="<password>" -DINAPPPWD1="<password>"
-```
-
-* To Run specific Tag on both devices (Ex: @Login on Android & iOS)
-```
-mvn verify -Dcucumber.filter.tags="@PatientLogin" -DAPPPWD1="<password>" -DINAPPPWD1="<password>"
-```
-
-* To Run specific Tag on specific device (Ex: @Login on Android)
-```
-mvn verify -Dsurefire.suiteXmlFiles=android_test.xml -Dcucumber.filter.tags="@PatientLogin" -DAPPPWD1="Pa$$w0rd" -DINAPPPWD1="Pa$$w0rds"
-```
-
-* To Run if there are multiple tags on specific device (Ex: Under Login scenario there are specified tag called @CorrectCredentials)
-```
-mvn verify -Dsurefire.suiteXmlFiles=android_test.xml -Dcucumber.filter.tags="@PatientLogin and @CorrectCredentials" -DAPPPWD1="Pa$$w0rd" -DINAPPPWD1="Pa$$w0rds"
-```
-
-<!-- Pipeline configurations -->
-## Pipeline Configurations
-
-Azure devOps Release pipeline is configured to execute tests. Two pipelines have been created for Android and IOS tests.
-
-#### Pipeline Tasks:
-
-1. Download pipeline artifacts - To download the dropped artifacts from the dev build pipeline like .apk/.ipa files and test files needed for execution.
-2. BrowserStack Config - To set up the connection between Azure and BrowserStack.
-3. BrowserStack App Uploader - To upload the .apk/.ipa files to BrowserStack.
-4. Java tool installer - To specify the Java version. Should user Java 11 to execute tests.
-5. Commandline - Command to execute the tests. Refer **Run Tests** section for the commands.
-6. Python script - To send an email with the attached test results file.
-
-#### Pipeline Variable Groups:
-
-1. BrowserStack connection variables
-    1. BROWSERSTACK_ACCESS_KEY - To connect to BrowserStack servers from Azure.
-    2. BROWSERSTACK_USERNAME - To connect to BrowserStack servers from Azure.
-    3. BROWSERSTACK_APP_ID - To store the url returned after uploading the apk/ipa to browserStack.
-2. Device settings
-    1. IOS_DEVICE/ANDROID_DEVICE - This defines which device the tests should run on. The value of this will be used in appium capabilities.
-    2. IOS_OS_VERSION/ANDROID_OS_VERSION - This defines which OS should use when executing the tests. The value of this will be used in appium capabilities.
-3. Test data
-    1. APPUN1 - Username used to log into the app.
-    2. APPPWD1 - Password used to log into the app.
-    3. INAPPUN1 - Incorrect username for negative scenarios.
-    4. INAPPPWD1 - Incorrect password for negative scenarios.
-    5. MELANOMA - The URL returned from BrowserStack after uploading the relevant image to BrowserStack.
-    6. NOMELANOMA - The URL returned from BrowserStack after uploading the relevant image to BrowserStack.
-    7. BLURRED - The URL returned from BrowserStack after uploading the relevant image to BrowserStack.
-    8. DARK - The URL returned from BrowserStack after uploading the relevant image to BrowserStack.
-4. Python script
-    1. devopsalertmail - To specify the sender email account.
-    2. devopsalertmailpassword - To specify the password of the sender email account.
-    3. aimtestresultschannelmail - To specify the receiver email address.
-
-#### Execution
-
-Release pipeline will be executed :
-
-1. Whenever after the dev build pipeline is executed.
-2. On scheduled basis - Currently set to be executed at 10am(IST)
-3. Manual trigger - Create and deploy manually
 
 
 ## Reporting Test Results
 
-After the tests have been executed an XML report will be generated, and it will be sent to the specified recipient (recipient's email address needs to be set in the pipeline variables).
-Two reports will be created for Android and IOS executions.
+After the tests have been executed an XML report will be generated in TestResult folder.
 
 
 ## Special Notes
 
-If the analysis results do not match the expected results according to the images provided, the scripts will fail but in the test report the reason for the script failure will be mentioned.
+If the analysis results do not match the expected results, the scripts will fail but in the test report the reason for the script failure will be mentioned.
 
 
-Eg: If the image is melonama active and the expected result should be melonama detected, the test will fail with the following message in the test results file.
+Eg: If baseline test is not completed successfully.
 ```
-**[Error in the Results: Expected Result should be 'Evidence of Melanoma Detected', But the given result is wrong**
+**[Error in the Results: Expected Result should be 'Completed', But the given result is wrong**
 ```
 
 
@@ -443,7 +285,7 @@ Eg: If the image is melonama active and the expected result should be melonama d
 <!-- Author -->
 ## Author
 
-Thilan Weerasinghe - thilan@ascentic.se
+Thara Perera - thara.perera@ascentic.se
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -454,8 +296,9 @@ Thilan Weerasinghe - thilan@ascentic.se
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Stack Overflow](https://stackoverflow.com/)
-* [GitHub Pages](https://pages.github.com)
 * [Automation Step By Step](https://www.youtube.com/c/AutomationStepByStep)
+* [Execute Automation](https://www.youtube.com/@ExecuteAutomation)
+* [GitHub Pages](https://pages.github.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
