@@ -138,9 +138,9 @@ https://www.oracle.com/java/technologies/downloads/
 * Launch Android Studio - Tools - SDK Manager, update and download latest SDK tools
 * Add JAVA JDK and Android SDK environment variables :
 ```
-JAVA_HOME=C:\Program Files\Java\jdk-19 
-ANDROID_HOME as a user variable=C:\Users\User\AppData\Local\Android\Sdk
-PATH=%JAVA_HOME%\bin:%ANDROID_HOME%\platform-tools:%ANDROID_HOME%\platform-tools\adb
+JAVA_HOME = C:\Program Files\Java\jdk-19 
+ANDROID_HOME as an user variable = C:\Users\User\AppData\Local\Android\Sdk
+PATH = %JAVA_HOME%\bin:%ANDROID_HOME%\platform-tools:%ANDROID_HOME%\platform-tools\adb
 ```
 * Run appium doctor :
 ```
@@ -161,19 +161,19 @@ appium-doctor --android
 ✔ 'bin' subfolder exists under 'C:\Program Files\Java\jdk-19
 ```
 #### - Android real device
-* Run Vysor :
+* Install Vysor :
 ```
 https://www.vysor.io/download/
 ```
-* Download SDK from command line tools and extract :
+* Download andriod-sdk from command line tools and extract :
 ```
 https://developer.android.com/studio
 ```
-* Find the API level of aligned with your device andriod version :
+* Find the API level aligned with your device andriod version :
 ```
-https://en.wikipedia.org/wiki/Android_version_history :
+https://en.wikipedia.org/wiki/Android_version_history
 ```
-* Navigate to \cmdline-tools\bin folder in downloaded andriod-sdk from commandline:
+* Navigate to \cmdline-tools\bin folder in downloaded andriod-sdk from commandline and execute :
 ```
 sdkmanager "platform-tools" "platforms;android-<<API level>>"
 ```
@@ -183,8 +183,8 @@ sdkmanager "platform-tools" "platforms;android-<<API level>>"
 ```
 * Add Android SDK environment variables :
 ```
-ANDROID_HOME as a system variable=C:\Program Files\android-sdk
-PATH=%ANDROID_HOME%\platform-tools
+ANDROID_HOME as a system variable = C:\Program Files\android-sdk
+PATH = %ANDROID_HOME%\platform-tools
 ```
 
 <!-- Project Structure -->
@@ -213,7 +213,7 @@ brainsafe_automation
 			|-- RehabilitationGeneral.cs
 			|-- RetrunToPlayTest.cs
 		|-- Welcome
-			|-- Appwelcome.cs
+			|-- AppWelcome.cs
 	|-- TestResults
 		|-- TestResults.xml  
 	|-- Tests
@@ -223,7 +223,7 @@ brainsafe_automation
 ```
 
 #### Apps
-Store the app .apk files.
+Store the .apk files.
 
 #### Hooks
 Intializing and closing driver. 
@@ -232,7 +232,7 @@ Intializing and closing driver.
 PageObjects are used to store the Elements for a Page.
 
 #### TestResults
-Store the as resuls as .xml file.
+Store test results as .xml file.
 
 #### Tests
 Test runner class where test cases are written and execution order is mentioned.
