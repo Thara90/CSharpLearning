@@ -132,7 +132,7 @@ Download and install JAVA SDK if it is not installed (choose windows version)
 https://www.oracle.com/java/technologies/downloads/
 ```
 
-### Android Software Dependencies
+### 4. Android Software Dependencies
 #### - Android Emulator
 * Download Android Studio : https://developer.android.com/studio
 * Launch Android Studio - Tools - SDK Manager, update and download latest SDK tools
