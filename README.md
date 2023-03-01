@@ -34,7 +34,7 @@
 	  <li><a href="#Install-Visual-Studio">Install Visual Studio</a></li>
         <li><a href="#Install-Appium-Server">Install Appium Server</a></li>
         <li><a href="#Install-JAVA-JDK">Install JAVA JDK</a></li>
-        <li><a href="#Environment_Variables">Environment Variables</a></li>
+        <li><a href="#Android_Software_Dependencies">Android Software Dependencies</a></li>
       </ul>
     </li>
     <li><a href="#Project_Structure">Project Structure</a></li>
@@ -78,9 +78,9 @@ The test automation project comprises following tools and libraries :
 
 ### 1. Install Visual Studio
 
-* Install Visual Studio :
+* Download Visual Studio :
 ```
-https://developer.android.com/studio
+https://visualstudio.microsoft.com/downloads/
 ```
 
 ### 2. Install Appium Server
@@ -115,7 +115,7 @@ npm install appium-doctor -g
 appium-doctor --version
 ```
 
-### 2. Install JAVA JDK
+### 3. Install JAVA JDK
 
 Check java jdk is already installed :
 ```
@@ -132,9 +132,9 @@ Download and install JAVA SDK if it is not installed (choose windows version)
 https://www.oracle.com/java/technologies/downloads/
 ```
 
-#### Android Software Dependencies
+### Android Software Dependencies
 #### - Android Emulator
-* Download Android Studio : http://developer.android.com/sdk/index.html
+* Download Android Studio : https://developer.android.com/studio
 * Launch Android Studio - Tools - SDK Manager, update and download latest SDK tools
 * Add JAVA JDK and Android SDK environment variables :
 ```
@@ -179,12 +179,12 @@ sdkmanager "platform-tools" "platforms;android-<<API level>>"
 ```
 * Check platform-tools is installed :
 ```
-<<local dirctory>>\android-sdk
+C:\Program Files\android-sdk
 ```
 * Add Android SDK environment variables :
 ```
 ANDROID_HOME as a system variable = C:\Program Files\android-sdk
-PATH = %ANDROID_HOME%\platform-tools
+PATH = C:\Program Files\android-sdk\platform-tools
 ```
 
 <!-- Project Structure -->
